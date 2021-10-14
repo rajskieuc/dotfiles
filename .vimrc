@@ -21,7 +21,8 @@ set signcolumn=yes
 set termguicolors
 set splitbelow
 set splitright
-
+set listchars=eol:¬,space:·
+set list
 ""
 " Plugins "
 ""
@@ -69,6 +70,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
+hi SpecialKey ctermfg=grey guifg=grey25
 
 ""
 " Auto completion settings "
@@ -89,25 +91,27 @@ endif
 " Key Mappings
 ""
 let mapleader=" "
-nnoremap <C-n> :NERDTree<CR>
+vnoremap <C-y> "*y
 nnoremap <leader>a :NERDTreeToggle<CR>
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>h <C-w>h
-nnoremap <leader>l <C-w>l
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>f :Rg <CR>
-inoremap (~ ()<Esc>i
-inoremap {~ {}<Esc>i
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-q> gT
+nnoremap <C-e> gt
+inoremap (- ()<Esc>i
+inoremap {- {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
-inoremap [~ []<Esc>i
+inoremap [- []<Esc>i
 inoremap (<CR> (<CR>)<Esc>O
 inoremap [<CR>] [<CR>]<Esc>O
-inoremap <~ <><Esc>i
-inoremap '~ ''<Esc>i
-inoremap "~ ""<Esc>i
-inoremap `~ ``<Esc>i
+inoremap <- <><Esc>i
+inoremap '- ''<Esc>i
+inoremap "- ""<Esc>i
+inoremap `- ``<Esc>i
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gy <Plug>(coc-type-definition)
@@ -116,10 +120,8 @@ nmap <F1> <nop>
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>de :call vimspector#Reset()<CR>
 nnoremap <leader>dc :call vimspector#Continue()<CR>
-
 nnoremap <leader>dt :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <leader>dT :call vimspector#ClearBreakpoints()<CR>
-
 nmap <leader>dk <Plug>VimspectorRestart
 nmap <leader>dh <Plug>VimspectorStepOut
 nmap <leader>dl <Plug>VimspectorStepInto
