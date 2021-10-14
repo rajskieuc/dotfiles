@@ -92,6 +92,7 @@ endif
 ""
 let mapleader=" "
 vnoremap <C-y> "*y
+inoremap <C-a> <Esc>la
 nnoremap <leader>a :NERDTreeToggle<CR>
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>f :Rg <CR>
