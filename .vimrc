@@ -16,7 +16,7 @@ set undofile
 set incsearch
 set nohlsearch
 set colorcolumn=100
-set scrolloff=8
+set scrolloff=10
 set signcolumn=yes
 set termguicolors
 set splitbelow
@@ -102,16 +102,16 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-q> gT
 nnoremap <C-e> gt
-inoremap (- ()<Esc>i
-inoremap {- {}<Esc>i
+inoremap () ()<Esc>i
+inoremap {} {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
-inoremap [- []<Esc>i
+inoremap [] []<Esc>i
 inoremap (<CR> (<CR>)<Esc>O
-inoremap [<CR>] [<CR>]<Esc>O
-inoremap <- <><Esc>i
-inoremap '- ''<Esc>i
-inoremap "- ""<Esc>i
-inoremap `- ``<Esc>i
+inoremap [<CR> [<CR>]<Esc>O
+inoremap <> <><Esc>i
+inoremap '' ''<Esc>i
+inoremap "" ""<Esc>i
+inoremap `` ``<Esc>i
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gy <Plug>(coc-type-definition)
